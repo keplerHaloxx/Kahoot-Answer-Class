@@ -1,4 +1,5 @@
 from KahootClass import Kahoot
+from colorama import Fore
 
 # 3fd3016c-fd92-440a-a614-5d5c6eb1c17f
 # This is the uuid of a random Kahoot I found.
@@ -9,6 +10,7 @@ from KahootClass import Kahoot
 # Or you can just do what I did and just prompt asking for the quizID.
 kahoot = Kahoot(input("Enter QuizID: "))
 
+# If there is a  '|' in the answer. That means the question has multiple answers
 for i in range(kahoot.get_quiz_length()):
     if kahoot.get_answer(i) is not None:
-        print(f"Question: {kahoot.get_question_names()[i]}\nAnswer: {', '.join(kahoot.get_answer(i))}\n")
+        print(f"{Fore.RESET}< Question {i + 1} >\n{Fore.LIGHTYELLOW_EX}Q: {kahoot.get_question_names()[i]}\n{Fore.LIGHTGREEN_EX}A: " + f'{Fore.LIGHTMAGENTA_EX} | {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(i)) + "\n")
