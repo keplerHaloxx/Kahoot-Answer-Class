@@ -34,9 +34,9 @@ try:
         for i in range(kahoot.get_quiz_length()):
             if kahoot.get_answer(i) is not None:
                 if kahoot.get_question_details(i)['type'] == 'open_ended':
-                    print(f'{Fore.RESET}< Question {i + 1} >\n{Fore.LIGHTYELLOW_EX}Q: {kahoot.get_question_names()[i]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} or {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(i)) + '\n')
+                    print(f'{Fore.RESET}< Question {i + 1} >\n{Fore.LIGHTYELLOW_EX}Q: {kahoot.get_question_names()[i]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} or {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(i)) + '\n' + Fore.RESET)
                 else:
-                    print(f'{Fore.RESET}< Question {i + 1} >\n{Fore.LIGHTYELLOW_EX}Q: {kahoot.get_question_names()[i]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} | {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(i)) + '\n')
+                    print(f'{Fore.RESET}< Question {i + 1} >\n{Fore.LIGHTYELLOW_EX}Q: {kahoot.get_question_names()[i]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} | {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(i)) + '\n'  + Fore.RESET)
 
     elif print_type == '2':
         while True:
@@ -46,6 +46,10 @@ try:
                 num = custom_input(Fore.RESET, '\nEnter Question Number: ')
 
             custom_print(Fore.RESET, f'\n< Question {int(num)} >')
-            custom_print(Fore.LIGHTYELLOW_EX, f'Q: {kahoot.get_question_names()[int(num) - 1]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} or {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(int(num) - 1)))
+            if kahoot.get_question_details(int(num) - 1)['type'] == 'open_ended':
+                custom_print(Fore.LIGHTYELLOW_EX, f'Q: {kahoot.get_question_names()[int(num) - 1]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} or {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(int(num) - 1)))
+            else:
+                custom_print(Fore.LIGHTYELLOW_EX, f'Q: {kahoot.get_question_names()[int(num) - 1]}\n{Fore.LIGHTGREEN_EX}A: ' + f'{Fore.LIGHTMAGENTA_EX} | {Fore.LIGHTGREEN_EX}'.join(kahoot.get_answer(int(num) - 1)))
+
 except KeyboardInterrupt:
-    print(Fore.LIGHTRED_EX + '\nCancelled')
+    print(Fore.LIGHTRED_EX + '\nCancelled{Fore.RESET}\n')
