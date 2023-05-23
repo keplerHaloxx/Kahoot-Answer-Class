@@ -1,3 +1,6 @@
+# Warning!
+I can't be bothered documenting this code so it looks really bad. If anyone wants to open a pull request and document my crappy code then thank you.
+
 # Kahoot-Answer-API
 
 ## If you want to use the script I made using the api, run 'Main.py' or install the .exe which has been compiled so you don't need to install python
