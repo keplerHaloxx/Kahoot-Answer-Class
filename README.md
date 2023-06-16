@@ -1,9 +1,9 @@
 # Warning!
 I can't be bothered documenting this code so it looks really bad. If anyone wants to open a pull request and document my crappy code then thank you.
 
-# Kahoot-Answer-API
+# Kahoot-Answer-Class
 
-## If you want to use the script I made using the api, run 'Main.py' or install the .exe which has been compiled so you don't need to install python
+## If you want to use the script I made using the api, run `Main.py`. You can also use the `KahootClass.py` file to make your own version.
 
 ## ❓How To Use❓
 You can either use `KahootClass.py` to use the class for yourself
