@@ -1,5 +1,4 @@
-# Warning!
-I can't be bothered documenting this code so it looks really bad. If anyone wants to open a pull request and document my crappy code then thank you.
+# [Documentation](https://github.com/keplerHaloxx/Kahoot-Answer-Class/wiki)
 
 # Kahoot-Answer-Class
 
